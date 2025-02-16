@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOC Automation</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>SOC Automation Dashboard</h1>
+        
+        <div class="panel">
+            <h2>IP Reputation Checker</h2>
+            <textarea id="ipText" placeholder="Enter text with IPs..."></textarea>
+            <div>
+                <button onclick="pasteFromClipboard()">Paste from Clipboard</button>
+                <button onclick="checkIP()">Check IPs</button>
+            </div>
+        </div>
+        
+
+        <div class="panel">
+            <h2>Extracted IPs</h2>
+            <pre id="extractedIPs"></pre>
+            <button onclick="copyToClipboard('extractedIPs')">Copy Extracted IPs</button>
+        </div>
+
+        <div class="panel">
+            <h2>Reputation Results</h2>
+            <pre id="result"></pre>
+            <button onclick="copyToClipboard('result')">Copy Reputation Results</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
